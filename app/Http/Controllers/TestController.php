@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Foo;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Application;
 
 class TestController extends Controller
 {
@@ -12,10 +14,13 @@ class TestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function service_container_test(Request $request)
     {
-        $s3 = App::make('aws')->createClient('s3');
-        dd($s3);
-        return view('test');
+        app()->bind(Foo::class, function (Application $app) {
+            $foo = new Foo();
+            return $foo;
+        });
+        $foo = app()->make(Foo::class);
+        $foo->test();
     }
 }
