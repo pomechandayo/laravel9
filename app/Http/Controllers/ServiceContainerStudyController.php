@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Foo;
+use App\Study\ServiceContainerStudy\Foo;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Application;
 
-class TestController extends Controller
+class ServiceContainerStudyController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -14,7 +14,7 @@ class TestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function service_container_test(Request $request)
+    public function index(Request $request)
     {
         app()->bind(Foo::class, function (Application $app) {
             $foo = new Foo();
