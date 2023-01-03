@@ -14,13 +14,13 @@ class ServiceContainerStudyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Foo $foo)
     {
-        app()->bind(Foo::class, function (Application $app) {
-            $foo = new Foo();
-            return $foo;
-        });
+        // app()->bind(Foo::class, function (Application $app) {
+        //     $foo = new Foo();
+        //     return $foo;
+        // });
         $foo = app()->make(Foo::class);
-        $foo->test();
+        $foo->log1();
     }
 }
