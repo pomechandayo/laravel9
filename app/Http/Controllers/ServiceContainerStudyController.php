@@ -16,11 +16,6 @@ class ServiceContainerStudyController extends Controller
      */
     public function index(Foo $foo)
     {
-        // app()->bind(Foo::class, function (Application $app) {
-        //     $foo = new Foo();
-        //     return $foo;
-        // });
-        $foo = app()->make(Foo::class);
         $foo->log1();
     }
 }
