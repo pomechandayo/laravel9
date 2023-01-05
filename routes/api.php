@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceContainerStudyController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(ServiceContainerStudyController::class)->group(function () {
     Route::get('/service-container-study', 'index');
+});
+Route::controller(UserController::class)->group(function () {
+    Route::get('/user', 'index');
 });
