@@ -10,6 +10,9 @@ use App\Study\ServiceContainerStudy\Bar;
 use App\Study\ServiceContainerStudy\BlowfishEncrypter;
 use App\Repository\UserRepository;
 use App\Repository\UserRepositoryInterface;
+use App\Service\UserService;
+use App\Repository\AdminRepository;
+use App\Service\AdminService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,9 +29,16 @@ class AppServiceProvider extends ServiceProvider
             Log::info('register foo');
             return $foo;
         });
-        app()->bind(UserRepositoryInterface::class, function () {
-            return new UserRepository();
-        });
+        // app()->bind(UserRepositoryInterface::class, function () {
+        //     return new UserRepository();
+        // });
+        app()->when(UserService::class)
+             ->needs(UserRepositoryInterface::class)
+             ->give(UserRepository::class);
+
+        app()->when(AdminService::class)
+             ->needs(UserRepositoryInterface::class)
+             ->give(AdminRepository::class);
 
         // $this->app->singleton(
         //     'encrypter',
