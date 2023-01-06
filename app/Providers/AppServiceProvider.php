@@ -8,6 +8,8 @@ use Illuminate\Support\Str;
 use App\Study\ServiceContainerStudy\Foo;
 use App\Study\ServiceContainerStudy\Bar;
 use App\Study\ServiceContainerStudy\BlowfishEncrypter;
+use App\Repository\UserRepository;
+use App\Repository\UserRepositoryInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,9 @@ class AppServiceProvider extends ServiceProvider
             $foo = new Foo(new Bar);
             Log::info('register foo');
             return $foo;
+        });
+        app()->bind(UserRepositoryInterface::class, function () {
+            return new UserRepository();
         });
 
         // $this->app->singleton(

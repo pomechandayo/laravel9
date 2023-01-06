@@ -1,15 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Service;
 
-use App\Models\User;
 use Illuminate\Support\Facades\Log;
+use App\Repository\UserRepositoryInterface;
 
 class UserService
 {
-  public function get_user()
+  protected $userRepository;
+  public function __construct(UserRepositoryInterface $userRepository)
   {
-    $user = User::all();
+    $this->userRepository = $userRepository;
+  }
+  public function get_users()
+  {
+    $user = $this->userRepository->get_users();
     LOG::info($user);
 
     return $user;
