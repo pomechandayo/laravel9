@@ -2,7 +2,7 @@
 ## リポジトリの使用方法
 * 書籍や技術記事から学んだことを記録していくために使用する
 * これから学習していく内容についてはIssueを作成している
-* 学習内容は下記にまとめている
+* 学習内容は下記にまとめている  
 https://github.com/pomechandayo/laravel9/tree/master/study-note
 ## 環境
 * Laravel Sailを使用
