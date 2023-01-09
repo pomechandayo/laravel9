@@ -11,8 +11,8 @@ use App\Study\ServiceContainerStudy\BlowfishEncrypter;
 use App\Repository\UserRepository;
 use App\Repository\UserRepositoryInterface;
 use App\Service\UserService;
+use App\Repository\AdminRepositoryInterface;
 use App\Repository\AdminRepository;
-use App\Service\AdminService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -36,9 +36,10 @@ class AppServiceProvider extends ServiceProvider
              ->needs(UserRepositoryInterface::class)
              ->give(UserRepository::class);
 
-        app()->when(AdminService::class)
-             ->needs(UserRepositoryInterface::class)
-             ->give(AdminRepository::class);
+        $this->app->bind(
+            AdminRepositoryInterface::class,
+            AdminRepository::class,
+        );
 
         // $this->app->singleton(
         //     'encrypter',

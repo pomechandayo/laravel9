@@ -4,21 +4,25 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use Illuminate\Support\Facades\Log;
-use App\Repository\UserRepositoryInterface;
+use App\Repository\AdminRepositoryInterface;
+use App\Entity\AdminEntity;
 
-class adminService
+class AdminService
 {
-  protected $userRepository;
-  public function __construct(UserRepositoryInterface $userRepository)
+  protected $admin_repository;
+  public function __construct(AdminRepositoryInterface $admin_repository)
   {
-    $this->userRepository = $userRepository;
+    $this->admin_repository = $admin_repository;
   }
   public function get_users()
   {
     $user = $this->userRepository->get_users();
-    LOG::info('admin');
 
     return $user;
+  }
+
+  public function store(string $name): int
+  {
+    return $this->admin_repository->store(new AdminEntity(null, $name));
   }
 }

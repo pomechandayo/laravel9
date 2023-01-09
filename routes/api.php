@@ -29,4 +29,5 @@ Route::controller(UserController::class)->group(function () {
 });
 Route::controller(AdminController::class)->group(function () {
     Route::get('/admin', 'index');
+    Route::post('/admin/store', 'store');
 });
