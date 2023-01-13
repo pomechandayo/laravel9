@@ -31,3 +31,7 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/admin', 'index');
     Route::post('/admin/store', 'store');
 });
+
+Route::middleware('auth:sanctum')->get('/test', function () {
+    return json_encode(['ary' => 'Hello World1']);
+});
