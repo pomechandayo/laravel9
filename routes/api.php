@@ -32,6 +32,9 @@ Route::controller(AdminController::class)->group(function () {
     Route::post('/admin/store', 'store');
 });
 
+// Route::get('/test', function () {
+//     return json_encode(['ary' => 'Hello World1']);
+// });
 Route::middleware('auth:sanctum')->get('/test', function () {
     return json_encode(['ary' => 'Hello World1']);
 });
