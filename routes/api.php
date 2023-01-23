@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(ServiceContainerStudyController::class)->group(function () {
     Route::get('/service-container-study', 'index');
+    Route::get('/calculator', 'tax');
 });
 Route::controller(UserController::class)->group(function () {
     Route::get('/user', 'index');

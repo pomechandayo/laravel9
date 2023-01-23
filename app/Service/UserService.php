@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use Illuminate\Support\Facades\Log;
 use App\Repository\UserRepositoryInterface;
 
 class UserService
@@ -17,7 +16,6 @@ class UserService
   public function get_users()
   {
     $user = $this->userRepository->get_users();
-    LOG::info($user);
 
     return $user;
   }
