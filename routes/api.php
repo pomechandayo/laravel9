@@ -30,6 +30,7 @@ Route::controller(UserController::class)->group(function () {
 });
 Route::controller(AdminController::class)->group(function () {
     Route::get('/admin', 'index');
+    Route::get('/admin/test', 'get_user');
     Route::post('/admin/store', 'store');
 });
 
