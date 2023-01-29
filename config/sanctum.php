@@ -19,6 +19,7 @@ return [
         env('APP_URL') ? ','.parse_url(env('APP_URL'), PHP_URL_HOST) : ''
     ))),
 
+
     /*
     |--------------------------------------------------------------------------
     | Sanctum Guards
@@ -62,4 +63,5 @@ return [
         'encrypt_cookies' => App\Http\Middleware\EncryptCookies::class,
     ],
 
+    'prefix' => 'api/sanctum/',
 ];
