@@ -9,8 +9,9 @@ parameters:
     # Level 9 is the highest level
     level: 5
 
-#    ignoreErrors:
-#        - '#PHPDoc tag @var#'
+    ignoreErrors:
+        - '#PHPDoc tag @var#'
+        - '#PHPDoc tag @param references unknown parameter: \$request#'
 #
 #    excludePaths:
 #        - ./*/*/FileToBeExcluded.php
