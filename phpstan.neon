@@ -4,7 +4,8 @@ includes:
 parameters:
 
     paths:
-        - app/
+        # - app/
+        - app/Http/Controllers
 
     # Level 9 is the highest level
     level: 5
