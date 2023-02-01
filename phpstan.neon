@@ -5,16 +5,17 @@ parameters:
 
     paths:
         # - app/
-        - app/Http/Controllers
+        # - app/Http/Controllers
+        - app/Http
 
     # Level 9 is the highest level
     level: 5
 
     ignoreErrors:
-        - '#PHPDoc tag @var#'
         - '#PHPDoc tag @param references unknown parameter: \$request#'
 #
-#    excludePaths:
+    excludePaths:
 #        - ./*/*/FileToBeExcluded.php
-#
+        # - app/Http/Controllers # Controllers配下を除外
+        - app/Http/Controllers/UserController.php # UserController.phpのみ除外
 #    checkMissingIterableValueType: false
