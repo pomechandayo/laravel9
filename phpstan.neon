@@ -15,7 +15,6 @@ parameters:
         - '#PHPDoc tag @param references unknown parameter: \$request#'
 #
     excludePaths:
-#        - ./*/*/FileToBeExcluded.php
         # - app/Http/Controllers # Controllers配下を除外
         - app/Http/Controllers/UserController.php # UserController.phpのみ除外
 #    checkMissingIterableValueType: false
