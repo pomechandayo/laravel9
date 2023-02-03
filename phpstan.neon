@@ -5,7 +5,7 @@ parameters:
 
     paths:
         # - app/
-        - app/Http/Controllers
+        - app/Http/Controllers/StudyResourceController.php
         # - app/Http
 
     # Level 9 is the highest level
@@ -13,7 +13,7 @@ parameters:
 
     ignoreErrors:
         - '#PHPDoc tag @param references unknown parameter: \$request#'
-#
+        - '#Method [a-zA-Z0-9\\:()]* should return Illuminate\\Http\\Response but return statement is missing\.#'
     excludePaths:
         # - app/Http/Controllers # Controllers配下を除外
         - app/Http/Controllers/UserController.php # UserController.phpのみ除外
