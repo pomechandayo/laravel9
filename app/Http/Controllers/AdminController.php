@@ -14,7 +14,10 @@ class AdminController extends Controller
     {
         $this->model_factory = new ModelFactory();
     }
-    public function index(AdminService $admin_service)
+    /**
+     * @param array{ num: int } $ary
+     */
+    public function index(AdminService $admin_service, array $ary) : AdminService
     {
         return $admin_service->get_users();
     }
