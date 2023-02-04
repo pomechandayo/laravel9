@@ -16,6 +16,6 @@ class Studycontroller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return response()->json('authorization', 200);
+        //
     }
 }
