@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class Studycontroller extends Controller
 {
-    public function authorization() {
+    public function authorization()
+    {
         return response()->json('authorization', 200);
     }
 
@@ -15,7 +14,8 @@ class Studycontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index()
+    {
         //
     }
 }

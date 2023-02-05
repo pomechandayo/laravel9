@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Study\ServiceContainerStudy\Foo;
 use App\Service\CalculatorService;
+use App\Study\ServiceContainerStudy\Foo;
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Log;
 
 class ServiceContainerStudyController extends Controller
 {
@@ -21,7 +19,8 @@ class ServiceContainerStudyController extends Controller
         $foo->log1();
     }
 
-    public function tax(Request $request) {
+    public function tax(Request $request)
+    {
         return CalculatorService::newInstance(0)->tax($request->input('price'))->get_result();
     }
 }

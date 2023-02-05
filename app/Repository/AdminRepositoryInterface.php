@@ -8,7 +8,7 @@ use App\Entity\AdminEntity;
 
 interface AdminRepositoryInterface
 {
-  public function get_users(): array;
+    public function get_users(): array;
 
-  public function store(AdminEntity $admin_entity);
+    public function store(AdminEntity $admin_entity);
 }

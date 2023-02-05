@@ -1,11 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ServiceContainerStudyController;
+use App\Http\Controllers\Studycontroller;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ServiceContainerStudyController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\Studycontroller;
 
 /*
 |--------------------------------------------------------------------------

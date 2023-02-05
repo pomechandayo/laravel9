@@ -10,9 +10,11 @@ final class HeaderDumper
 {
     private $logger;
 
-    public function __construct(LoggerInterface $logger) {
+    public function __construct(LoggerInterface $logger)
+    {
         $this->logger = $logger;
     }
+
     /**
      * Handle an incoming request.
      *
@@ -25,16 +27,17 @@ final class HeaderDumper
         $this->logger->info(
             'request',
             [
-                'header' => strval($request->headers)
+                'header' => strval($request->headers),
             ]
         );
         $response = $next($request);
         $this->logger->info(
             'response',
             [
-                'header' => strval($response->headers)
+                'header' => strval($response->headers),
             ]
         );
+
         return $response;
     }
 }

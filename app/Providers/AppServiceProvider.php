@@ -2,17 +2,17 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
-use App\Study\ServiceContainerStudy\Foo;
-use App\Study\ServiceContainerStudy\Bar;
-use App\Study\ServiceContainerStudy\BlowfishEncrypter;
+use App\Repository\AdminRepository;
+use App\Repository\AdminRepositoryInterface;
 use App\Repository\UserRepository;
 use App\Repository\UserRepositoryInterface;
 use App\Service\UserService;
-use App\Repository\AdminRepositoryInterface;
-use App\Repository\AdminRepository;
+use App\Study\ServiceContainerStudy\Bar;
+use App\Study\ServiceContainerStudy\BlowfishEncrypter;
+use App\Study\ServiceContainerStudy\Foo;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
         app()->bind(Foo::class, function () {
             $foo = new Foo(new Bar);
             Log::info('register foo');
+
             return $foo;
         });
         // app()->bind(UserRepositoryInterface::class, function () {

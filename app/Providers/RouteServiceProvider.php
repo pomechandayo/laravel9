@@ -33,26 +33,26 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-     public function boot()
-     {
-         $this->configureRateLimiting();
-     
-         $this->routes(function () {
-             Route::prefix('api')
-                 ->middleware('api')
-                 ->namespace($this->namespace)
-                 ->group(base_path('routes/api.php'));
-     
-             Route::middleware('web')
-                 ->namespace($this->namespace)
-                 ->group(base_path('routes/web.php'));
+    public function boot()
+    {
+        $this->configureRateLimiting();
 
-             Route::prefix('api')
-                 ->middleware('api')
-                 ->namespace($this->namespace)
-                 ->group(base_path('routes/fortify.php'));
-         });
-     }
+        $this->routes(function () {
+            Route::prefix('api')
+                ->middleware('api')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/api.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/web.php'));
+
+            Route::prefix('api')
+                ->middleware('api')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/fortify.php'));
+        });
+    }
 
     /**
      * Configure the rate limiters for the application.

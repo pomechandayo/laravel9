@@ -8,15 +8,17 @@ use App\Repository\UserRepositoryInterface;
 
 class UserService
 {
-  protected $userRepository;
-  public function __construct(UserRepositoryInterface $userRepository)
-  {
-    $this->userRepository = $userRepository;
-  }
-  public function get_users()
-  {
-    $user = $this->userRepository->get_users();
+    protected $userRepository;
 
-    return $user;
-  }
+    public function __construct(UserRepositoryInterface $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
+
+    public function get_users()
+    {
+        $user = $this->userRepository->get_users();
+
+        return $user;
+    }
 }

@@ -6,5 +6,5 @@ namespace App\Repository;
 
 interface UserRepositoryInterface
 {
-  public function get_users(): array;
+    public function get_users(): array;
 }
