@@ -34,7 +34,9 @@ Route::controller(ServiceContainerStudyController::class)->group(function () {
 });
 Route::controller(UserController::class)->group(function () {
     Route::get('/users', 'index');
-    Route::get('/users/name', 'get_user_name');
+    Route::get('/users/name', 'get_users_name');
+    Route::delete('/users/{id}', 'delete_user');
+    Route::get('/users/removed', 'get_users_name_removed_only');
 });
 Route::controller(Studycontroller::class)->group(function () {
     Route::get('/authorization', 'authorization');

@@ -25,7 +25,15 @@ class UserController extends Controller
         }
     }
 
-    public function get_user_name() {
+    public function get_users_name() {
         return User::all();
+    }
+
+    public function get_users_name_removed_only() {
+        return User::onlyTrashed()->get();
+    }
+
+    public function delete_user($id) {
+        return User::find($id)->delete();
     }
 }
