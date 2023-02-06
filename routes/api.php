@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::controller(UserController::class)->group(function () {
         Route::get('/users/authorization', 'get_users');
@@ -33,6 +34,7 @@ Route::controller(ServiceContainerStudyController::class)->group(function () {
 });
 Route::controller(UserController::class)->group(function () {
     Route::get('/users', 'index');
+    Route::get('/users/name', 'get_user_name');
 });
 Route::controller(Studycontroller::class)->group(function () {
     Route::get('/authorization', 'authorization');

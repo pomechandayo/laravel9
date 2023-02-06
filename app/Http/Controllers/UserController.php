@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Service\UserService;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -22,5 +23,9 @@ class UserController extends Controller
         } else {
             return response()->json('Not approved');
         }
+    }
+
+    public function get_user_name() {
+        return User::all();
     }
 }

@@ -40,4 +40,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getNameAttribute(string $value): string {
+        return strtolower($value);
+    }
+
+    public function setNameAttribute(string $value): void {
+        $this->attributes['name'] = strtoupper($value);
+    }
 }
