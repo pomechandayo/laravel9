@@ -7,13 +7,12 @@ use Illuminate\Http\Request;
 class StudyResourceController extends Controller
 {
     /**
-     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // @phpstan-ignore-line
+        //
     }
 
     /**
@@ -79,6 +78,18 @@ class StudyResourceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+}
+
+class foo
+{
+    /**
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
         //
     }
