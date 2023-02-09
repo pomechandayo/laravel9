@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 class StudyResourceController extends Controller
 {
     /**
-     *
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -86,11 +85,13 @@ class StudyResourceController extends Controller
 class foo
 {
     /**
-     *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $user = User::where('age', '>=', '18')
+            ->get();
+
+        return true;
     }
 }

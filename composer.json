@@ -53,6 +53,9 @@
         ],
         "lint": [
             "./vendor/bin/phpstan analyse"
+        ],
+        "fix": [
+            "./vendor/bin/pint"
         ]
     },
     "extra": {

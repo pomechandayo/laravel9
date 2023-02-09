@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Service\UserService;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
-use App\Models\User;
 
 class UserController extends Controller
 {
@@ -25,15 +25,18 @@ class UserController extends Controller
         }
     }
 
-    public function get_users_name() {
+    public function get_users_name()
+    {
         return User::all();
     }
 
-    public function get_users_name_removed_only() {
+    public function get_users_name_removed_only()
+    {
         return User::onlyTrashed()->get();
     }
 
-    public function delete_user($id) {
+    public function delete_user($id)
+    {
         return User::find($id)->delete();
     }
 }

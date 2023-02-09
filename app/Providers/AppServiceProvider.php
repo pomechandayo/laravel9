@@ -34,8 +34,8 @@ class AppServiceProvider extends ServiceProvider
         //     return new UserRepository();
         // });
         app()->when(UserService::class)
-             ->needs(UserRepositoryInterface::class)
-             ->give(UserRepository::class);
+            ->needs(UserRepositoryInterface::class)
+            ->give(UserRepository::class);
 
         $this->app->bind(
             AdminRepositoryInterface::class,

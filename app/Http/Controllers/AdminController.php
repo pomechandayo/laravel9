@@ -12,7 +12,7 @@ class AdminController extends Controller
 
     public function __construct()
     {
-        $this->model_factory = new ModelFactory();
+        $this->model_factory = new ModelFactory;
     }
 
     /**

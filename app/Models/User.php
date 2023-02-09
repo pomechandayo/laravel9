@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
@@ -42,11 +42,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getNameAttribute(string $value): string {
+    public function getNameAttribute(string $value): string
+    {
         return strtolower($value);
     }
 
-    public function setNameAttribute(string $value): void {
+    public function setNameAttribute(string $value): void
+    {
         $this->attributes['name'] = strtoupper($value);
     }
 }
