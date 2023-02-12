@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ServiceContainerStudyController;
 use App\Http\Controllers\Studycontroller;
+use App\Http\Controllers\StudyResourceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -53,3 +54,5 @@ Route::controller(AdminController::class)->group(function () {
 Route::middleware('auth:sanctum')->get('/test', function () {
     return json_encode(['ary' => 'Hello World1']);
 });
+
+Route::resource('/study', StudyResourceController::class);
